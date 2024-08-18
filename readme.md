@@ -1,62 +1,51 @@
-# MERN Authentication Starter
+# MERN Users Management
 
-This is a starter app for a MERN stack application with authentication. This is for a SPA (Single Page Application) workflow that uses the [Vite](https://vite.dev) Build tool. This authentication workflow is based off of my [MERN Stack From Scratch | eCommerce](https://www.traversymedia.com/mern-stack-from-scratch) course.
+This is a full-stack MERN (MongoDB, Express, React, Node.js) application that includes user authentication, authorization, and user management features. The project utilizes JWT for secure authentication, and users' passwords are hashed using bcryptjs. The frontend is built with React, React Bootstrap, and Redux Toolkit, while the backend is powered by Express and Mongoose.
 
-<img src="./frontend/public/screen.png" />
+![Alt text](/homePage.png)
+![Alt text](/users_list.png)
 
-It includes the following:
+## Features
 
-- Backend API with Express & MongoDB
-- Routes for auth, logout, register, profile, update profile
-- JWT authentication stored in HTTP-only cookie
-- Protected routes and endpoints
-- Custom middleware to check JSON web token and store in cookie
-- Custom error middleware
-- React frontend to register, login, logout, view profile, and update profile
-- React Bootstrap UI library
-- React Toastify notifications
+- **User Authentication**: Secure login and registration with JWT.
+- **User Management**: View and manage users on a dedicated users page.
+- **State Management**: Managed with Redux Toolkit for a more scalable state architecture.
+- **Routing**: Implemented with React Router DOM for smooth navigation between pages.
+- **Notifications**: User-friendly notifications with React Toastify.
+- **Environment Configuration**: Managed securely with dotenv.
+- **Error Handling**: Async operations handled using express-async-handler.
+- **Cross-Origin Requests**: Enabled with CORS.
+- **Session Management**: Cookies are managed with cookie-parser.
+
+## Tech Stack
+
+### Frontend
+
+- **React**: A JavaScript library for building user interfaces.
+- **Redux Toolkit**: A toolset for efficient Redux development.
+- **React Router DOM**: Enables dynamic routing in the app.
+- **React Bootstrap**: Bootstrap components built with React.
+- **React Toastify**: Notifications for React apps.
+
+### Backend
+
+- **Node.js**: JavaScript runtime built on Chrome's V8 engine.
+- **Express**: Fast, unopinionated, minimalist web framework for Node.js.
+- **Mongoose**: MongoDB object modeling for Node.js.
+- **jsonwebtoken**: An implementation of JSON Web Tokens.
+- **bcryptjs**: Library to hash passwords.
+- **cookie-parser**: Middleware to parse cookies.
+- **cors**: Middleware for enabling CORS.
+- **dotenv**: Module for loading environment variables from a `.env` file.
+- **express-async-handler**: Simplifies error handling in Express routes.
 
 ## Usage
 
-- Create a MongoDB database and obtain your `MongoDB URI` - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
-- Create a PayPal account and obtain your `Client ID` - [PayPal Developer](https://developer.paypal.com/)
+- **User Authentication**:
 
-### Env Variables
+  - Register a new user.
+  - Login with existing credentials.
+  - The JWT token is stored securely and used for authenticated requests.
 
-Rename the `.env.example` file to `.env` and add the following
-
-```
-NODE_ENV = development
-PORT = 5000
-MONGO_URI = your mongodb uri
-JWT_SECRET = 'abc123'
-```
-
-Change the JWT_SECRET to what you want
-
-### Install Dependencies (frontend & backend)
-
-```
-npm install
-cd frontend
-npm install
-```
-
-### Run
-
-```
-
-# Run frontend (:3000) & backend (:5000)
-npm run dev
-
-# Run backend only
-npm run server
-```
-
-## Build & Deploy
-
-```
-# Create frontend prod build
-cd frontend
-npm run build
-```
+- **Users Page**:
+  - Navigate to `/users` to view all registered users (only accessible to authenticated users).
